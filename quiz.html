@@ -1,56 +1,83 @@
 <html>
-    <head>
+
+<head>
     <title>Fotbollsquiz</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="Css.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    </head>
-    <body>
-    <div>
-        <form>
-            Fråga 1. Vem gjorde det första målet i allsvenskan 2018?<br>
-            <input type=radio name=F1 value=c>Elias Mar Omarsson, IFK Göteborg<br>
-            <input type=radio name=F1 value=b>Moestapha El Kabir, Häcken<br>
-            <input type=radio name=F1 value=a>Jiloan Hamad, Hammarby<br>
-            Fråga 2. Vem vann skytteligan i allsvenskan 2018?<br>
-            <input type=radio name=F2 value=b>Linus Hallenius, Gif Sundsvall<br>
-            <input type=radio name=F2 value=a>Paulinho, Häcken<br>
-            <input type=radio name=F2 value=c>Nikola Djurdjic, Hammarby<br>
-            Fråga 3. Vem vann assistligan i allsvenskan?<br>
-            <input type=radio name=F3 value=c>Nahir Besara, Örebro SK<br>
-            <input type=radio name=F3 value=b>Eric Larsson, Malmö FF<br>
-            <input type=radio name=F3 value=a>Hosam Aiesh, Östersunds FK<br>
-            Fråga 4. Vilket lag vann publikligan?<br>
-            <input type=radio name=F4 value=a>Hammarby<br>
-            <input type=radio name=F4 value=b>Östersunds FK<br>
-            <input type=radio name=F4 value=c>IFK Norrköping<br>
-            Fråga 5. Vem gjorde flest straffmål (6 stycken) i allsvenskan 2018?<br>
-            <input type=radio name=F5 value=b>Markus Rosenberg, Malmö FF<br>
-            <input type=radio name=F5 value=a>Jiloan Hamad, Hammarby<br>
-            <input type=radio name=F5 value=c>Henok Goitom, AIK<br>
-            Fråga 6. Vem drog på sig flest varningar under säsongen 2018<br>
-            <input type=radio name=F6 value=a>Jeppe Andersen, Hammarby IF<br>
-            <input type=radio name=F6 value=b>Alexander Faltsetas, Häcken<br>
-            <input type=radio name=F6 value=c>Juan Ciercoles, Gif Sundsvall<br>
-            Fråga 7. Vilket lag gjorde flest mål under säsongen?<br>
-            <input type=radio name=F7 value=a>Häcken<br>
-            <input type=radio name=F7 value=b>AIK<br>
-            <input type=radio name=F7 value=c>Hammarby<br>
-            Fråga 8. Vem blev utsedd till årets mest värdefulla spelare på Allsvenskans Stora Pris?
-            <br>
-            <input type=radio name=F8 value=a>Kristoffer Olsson, AIK<br>
-            <input type=radio name=F8 value=b>Nikola Djurdjic, Hammarby<br>
-            <input type=radio name=F8 value=c>Paulinho, Häcken<br>
-            Fråga 9. Vem var förste tränaren att sparkas/lämna under säsongen?<br>
-            <input type=radio name=F9 value=a>Magnus Pehrsson, Malmö FF<br>
-            <input type=radio name=F9 value=b>Azrudin Valentic, Dalkurd<br>
-            <input type=radio name=F9 value=c>Luis Pimenta, BP<br>
-            Fråga 1. Endast en utespelare spelade samtliga minuter i allsvenskan, vem?<br>
-            <input type=radio name=F10 value=a>Per Karlsson, AIK<br>
-            <input type=radio name=F10 value=b>Daniel Björnkvist, Örebro SK<br>
-            <input type=radio name=F10 value=c>Jonathan Tamimi, Gif Sundsvall<br>
-        </form>
+</head>
+
+<body>
+    <div id=container>
+        <div class="header">
+        <header>
+            <h1>Kommer du ihåg Allsvenskan 2018?</h1>
+            <p>Testa dig här</p>
+        </header>
+        </div>
+        <section>
+        <div id=Frågor>
+            <form name="frågor" onsubmit="return svar()">
+                    <h3>Hur många frågor orkar du?</h3>
+                <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                </select>
+                <h3>Fråga 1. Vem gjorde det första målet i allsvenskan 2018?</h3>
+                <input type=radio id=F1 name=F1 value=c>Elias Mar Omarsson, IFK Göteborg<br>
+                <input type=radio name=F1 value=b>Moestapha El Kabir, Häcken<br>
+                <input type=radio name=F1 value=a>Jiloan Hamad, Hammarby<br>
+                <h3>Fråga 2. Vem vann skytteligan i allsvenskan 2018?</h3>
+                <input type=radio name=F2 value=b>Linus Hallenius, Gif Sundsvall<br>
+                <input type=radio name=F2 value=a>Paulinho, Häcken<br>
+                <input type=radio name=F2 value=c>Nikola Djurdjic, Hammarby<br>
+                <h3>Fråga 3. Vem vann assistligan i allsvenskan?</h3>
+                <input type=radio name=F3 value=c>Nahir Besara, Örebro SK<br>
+                <input type=radio name=F3 value=b>Eric Larsson, Malmö FF<br>
+                <input type=radio name=F3 value=a>Hosam Aiesh, Östersunds FK<br>
+                <h3>Fråga 4. Vilket lag vann publikligan?</h3>
+                <input type=radio name=F4 value=a>Hammarby<br>
+                <input type=radio name=F4 value=b>Östersunds FK<br>
+                <input type=radio name=F4 value=c>IFK Norrköping<br>
+                <h3>Fråga 5. Vem gjorde flest straffmål (6 stycken) i allsvenskan 2018?</h3>
+                <input type=radio name=F5 value=b>Markus Rosenberg, Malmö FF<br>
+                <input type=radio name=F5 value=a>Jiloan Hamad, Hammarby<br>
+                <input type=radio name=F5 value=c>Henok Goitom, AIK<br>
+                <h3>Fråga 6. Vem drog på sig flest varningar under säsongen 2018</h3>
+                <input type=radio name=F6 value=a>Jeppe Andersen, Hammarby IF<br>
+                <input type=radio name=F6 value=b>Alexander Faltsetas, Häcken<br>
+                <input type=radio name=F6 value=c>Juan Ciercoles, Gif Sundsvall<br>
+                <h3>Fråga 7. Vilket lag gjorde flest mål under säsongen?</h3>
+                <input type=radio name=F7 value=a>Häcken<br>
+                <input type=radio name=F7 value=b>AIK<br>
+                <input type=radio name=F7 value=c>Hammarby<br>
+                <h3>Fråga 8. Vem blev utsedd till årets mest värdefulla spelare på Allsvenskans Stora Pris?</h3>
+                <input type=radio name=F8 value=a>Kristoffer Olsson, AIK<br>
+                <input type=radio name=F8 value=b>Nikola Djurdjic, Hammarby<br>
+                <input type=radio name=F8 value=c>Paulinho, Häcken<br>
+                <h3>Fråga 9. Vem var förste tränaren att sparkas/lämna under säsongen?</h3>
+                <input type=radio name=F9 value=a>Magnus Pehrsson, Malmö FF<br>
+                <input type=radio name=F9 value=b>Azrudin Valentic, Dalkurd<br>
+                <input type=radio name=F9 value=c>Luis Pimenta, BP<br>
+                <h3>Fråga 10. Endast en utespelare spelade samtliga minuter i allsvenskan, vem?</h3>
+                <input type=radio name=F10 value=a>Per Karlsson, AIK<br>
+                <input type=radio name=F10 value=b>Daniel Björnkvist, Örebro SK<br>
+                <input type=radio name=F10 value=c>Jonathan Tamimi, Gif Sundsvall<br>
+                <br><br><input type=submit value=Rätta>
+            </form>
+            </section>
+        </div>
     </div>
-    </body>  
+
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
 </html>
