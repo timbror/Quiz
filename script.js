@@ -1,6 +1,8 @@
 function svar(){
     var total = 10;
     var poäng = 0;
+    
+    //Användar input
     var F1 = document.forms["frågor"]["F1"].value;
     var F2 = document.forms["frågor"]["F2"].value;
     var F3 = document.forms["frågor"]["F3"].value;
@@ -12,5 +14,23 @@ function svar(){
     var F9 = document.forms["frågor"]["F9"].value;
     var F10 = document.forms["frågor"]["F10"].value;
     
-    alert(F1);
+
+    //kollar så att alla frågor har ett svar
+    for(i = 1;i <=total;i++){
+        if (eval("F"+i) == null || eval("F"+i) == ""){
+            alert("Du missade fråga " + i+"!");
+            return false;
+        }
+    }
+    
+    var frågeSvar = [c,b,c,a,b,c,a,c,a,a]
+
+    for(i = 1; i <= total;i++){
+        if(eval("F"+i) == frågeSvar[i - 1]){
+                poäng++;
+        }
+    }
+
+    
+    alert ("du fick "+poäng+" av 10!, Bra jobbat!")
 }
