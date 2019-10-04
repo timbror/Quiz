@@ -1,18 +1,18 @@
 function svar(){
-    var total = 10;
-    var poäng = 0;
+    let total = 10;
+    let poäng = 0;
     
     //Användar input
-    var F1 = document.forms["frågor"]["F1"].value;
-    var F2 = document.forms["frågor"]["F2"].value;
-    var F3 = document.forms["frågor"]["F3"].value;
-    var F4 = document.forms["frågor"]["F4"].value;
-    var F5 = document.forms["frågor"]["F5"].value;
-    var F6 = document.forms["frågor"]["F6"].value;
-    var F7 = document.forms["frågor"]["F7"].value;
-    var F8 = document.forms["frågor"]["F8"].value;
-    var F9 = document.forms["frågor"]["F9"].value;
-    var F10 = document.forms["frågor"]["F10"].value;
+    let F1 = document.forms["fragor"]["F1"].value;
+    let F2 = document.forms["fragor"]["F2"].value;
+    let F3 = document.forms["fragor"]["F3"].value;
+    let F4 = document.forms["fragor"]["F4"].value;
+    let F5 = document.forms["fragor"]["F5"].value;
+    let F6 = document.forms["fragor"]["F6"].value;
+    let F7 = document.forms["fragor"]["F7"].value;
+    let F8 = document.forms["fragor"]["F8"].value;
+    let F9 = document.forms["fragor"]["F9"].value;
+    let F10 = document.forms["fragor"]["F10"].value;
     
 
     //kollar så att alla frågor har ett svar
@@ -23,14 +23,18 @@ function svar(){
         }
     }
     
-    var frågeSvar = [c,b,c,a,b,c,a,c,a,a]
+    let frågeSvar = ["c","b","c","a","b","c","a","c","a","a"]
 
     for(i = 1; i <= total;i++){
         if(eval("F"+i) == frågeSvar[i - 1]){
                 poäng++;
         }
     }
-
     
-    alert ("du fick "+poäng+" av 10!, Bra jobbat!")
+    let resultat = document.getElementById("resultat");
+    resultat.innerHTML = "<h3>You fick <span>"+poäng+"</span> av <span>"+total+"</span></h3>";
+    
+    alert ("du fick "+poäng+" av 10!, Bra jobbat!");
+    
+    return false;
 }
